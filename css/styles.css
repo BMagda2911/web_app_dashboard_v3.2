@@ -7,11 +7,12 @@
 h3 {
   text-transform: uppercase;
   margin: 20px 0 20px;
+  font-weight: 900;
 }
 
-.bold-headlines {
-  font-weight: 500;
-}
+/* .bold-headlines {
+  font-weight: 900;
+} */
 
 .body-grid-container {
   font-family: 'Open Sans', 'Raleway', sans-serif;
@@ -38,7 +39,7 @@ h3 {
 
 .header-container h1, h3 {
   font-size: 15px;
-  font-weight: 100;
+  /*font-weight: 100;*/
   display: inline-block;
 }
 
@@ -71,12 +72,27 @@ h3 {
     "header header"
     "navigation main";
   }
+
+  .navigation-container {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
   .main-container {
     grid-template-columns: 50%;/* 2 column layout on desktop screens */
   }
+
   .traffic-container,
   .social-container {
     grid-column: 1 / span 2;
+  }
+
+  .daily, .members, .message {
+    grid-column: 1 / span 1;
+  }
+
+  .mobile, .activity, .settings {
+    grid-column: 2 / span 1;
   }
 }
 
@@ -94,13 +110,15 @@ h3 {
   border-bottom: 2px solid #cccccc;
   border-left: 2px solid #cccccc;
   background-color: #f7f7f7;
-  width: 69%;
-  height: 50px;
+  width: 64%;
+  height: 57px;
+  margin-left: 15px;
 }
 
 .bell-container {
   display: inline-block;
-  position: relative;
+  width: 50px;
+  height: auto;
 }
 
 @keyframes ring {
@@ -134,6 +152,7 @@ h3 {
   fill: white;
   width: 32px;
   height: 32px;
+  position: relative;
 }
 
 .bell-notifications:hover {
@@ -148,7 +167,7 @@ h3 {
   width: 5px;
   border-radius: 50%;
   top: 0;
-  right: -12px; 
+  right: 12px; 
 }
 
 .header__vertical-line {
@@ -165,6 +184,7 @@ h3 {
 
 .alert-banner {
   background-color: #7477bf;
+  color: white;
   border-radius: 10px;
   width: 90%;
   margin: 0 auto;
@@ -178,6 +198,11 @@ h3 {
   padding-left: 40px;
 }
 
+@media (min-width: 768px) {
+  .alert-banner-close {
+    padding-left: 310px;
+  }
+}
 .widget-container-full,
 .widget-container-half {
   width: 95vw;
@@ -202,6 +227,7 @@ h3 {
 
 .traffic-nav-link {
   list-style-type: none;
+  padding: 5px 15px;
 }
 
 
@@ -284,5 +310,6 @@ input:checked + .slider:before {
 
 .active {
   background-color: #81c98f;
-  border-radius: 10px;
+  color: white;
+  border-radius: 20px;
 }

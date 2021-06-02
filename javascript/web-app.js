@@ -1,7 +1,6 @@
-//var Chart = require('chart.js');
-
 // variables
 const alertBanner = document.getElementById("alert");
+const notificationsCircle = document.getElementsByClassName("header__notifications-circle");
 const trafficCanvas = document.getElementById("traffic-chart");
 const dailyCanvas = document.getElementById("daily-chart");
 const mobileCanvas = document.getElementById("mobile-chart");
@@ -10,15 +9,13 @@ const message = document.getElementById("messageField");
 const send = document.getElementById("send");
 
 
-// create the html for the banner
-alertBanner.innerHTML =
-`
-<p class="alert-message"><strong>Alert:</strong> You have <strong>unread</strong> messages <span class="alert-banner-close">x</span></p>
-`
+// this event listener puts the display property of the alert banner and the notification's circle next to the bell icon to none
+
 alertBanner.addEventListener('click', e => {
   const element = e.target;
   if (element.classList.contains("alert-banner-close")) {
-    alertBanner.style.display = "none"
+    alertBanner.style.display = "none";
+    notificationsCircle[0].style.display = "none";
   }
 });
 
@@ -39,7 +36,7 @@ let trafficData = {
 
 let trafficOptions = {
   responsive: true,
-  aspectRatio: 2.5,
+  aspectRatio: 1.5,
   animation: {
     duration: 0
   },
@@ -132,11 +129,11 @@ let mobileChart = new Chart(mobileCanvas, {
 // create event listener on 'send' button
 send.addEventListener('click', () => {
   if (user.value === "" && message.value === "") {
-    alert("Please fill out user and message fields before sending");
+    alert("Please fill out user and message fields before sending.");
   } else if (user.value === "" ) {
-    alert("Please fill out user field before sending");
+    alert("Please fill out user field before sending.");
   } else if (message.value === "" ) {
-    alert("Please fill out message field before sending");
+    alert("Please fill out message field before sending.");
   } else {
     alert(`Message successfully sent to: ${user.value}`);
   }

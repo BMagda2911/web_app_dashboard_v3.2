@@ -1,5 +1,6 @@
 // variables
 const alertBanner = document.getElementById("alert");
+const closeButton = document.getElementById("close-alert-button");
 const notificationsCircle = document.getElementsByClassName("header__notifications-circle");
 const trafficCanvas = document.getElementById("traffic-chart");
 const dailyCanvas = document.getElementById("daily-chart");
@@ -11,13 +12,12 @@ const send = document.getElementById("send");
 
 // this event listener puts the display property of the alert banner and the notification's circle next to the bell icon to none
 
-alertBanner.addEventListener('click', e => {
-  const element = e.target;
-  if (element.classList.contains("alert-banner-close")) {
+function close() {
     alertBanner.style.display = "none";
     notificationsCircle[0].style.display = "none";
-  }
-});
+}
+
+closeButton.addEventListener('click', close);
 
 
 // data for all 3 charts
@@ -95,6 +95,7 @@ const mobileData = {
 };
 
 const mobileOptions = {
+  responsive: true,
   plugins: {
     legend: {
       position: 'right',

@@ -20,7 +20,7 @@ section {
 }
 
 .section-headline {
-  margin: 20px 0px 10px 20px;
+  margin: 20px 0px 10px 0px;
 }
 
 .bottom-border {
@@ -225,7 +225,6 @@ section {
   /*grid-area: social;*/
   display: flex;
   flex-direction: column;
-  justify-items: center;
   align-items: flex-start;
 }
 
@@ -289,7 +288,7 @@ section {
 }
 
 .members-text > p {
-  width: 285px;
+  width: 283px;
 }
 
 .members-date-or-time {
@@ -520,7 +519,6 @@ input[type="checkbox"].switch {
     display: flex;
     flex-flow: column;
     align-content: flex-start;
-    padding-left: 20px;
   }
 
   .members-container {

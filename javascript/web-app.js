@@ -36,7 +36,7 @@ let trafficData = {
 
 let trafficOptions = {
   responsive: true,
-  aspectRatio: 1.5,
+  aspectRatio: 2,
   animation: {
     duration: 0
   },
@@ -66,6 +66,7 @@ const dailyData = {
 
 const dailyOptions = {
   responsive: true,
+  aspectRatio: 1.75,
   scales: {
     yAxes: [{
       ticks: {
@@ -96,6 +97,7 @@ const mobileData = {
 
 const mobileOptions = {
   responsive: true,
+  aspectRatio: 1.5,
   plugins: {
     legend: {
       position: 'right',
@@ -105,7 +107,7 @@ const mobileOptions = {
       }
     }
   }
-}
+};
 
 // charts
 let trafficChart = new Chart(trafficCanvas, {
